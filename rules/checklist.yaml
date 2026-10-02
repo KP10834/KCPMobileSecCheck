@@ -1,0 +1,47 @@
+meta:
+  version: "0.1.0"
+  source: "금융보안원 2026년 전자금융기반시설 보안 취약점 평가기준 안내서 모바일 항목 기반"
+  scope: "KCP Wallet mobile security smoke check"
+
+groups:
+  ios:
+    - item_id: MOB-FIN-011
+      title: "[전자금융] OS 변조 탐지 기능 적용"
+      probes: [IOS-JAILBREAK]
+    - item_id: MOB-FIN-020
+      title: "[전자금융] 소스코드 난독화 적용"
+      probes: [IOS-OBFUSCATION, RN-BUNDLE-PROTECTION]
+    - item_id: MOB-FIN-021
+      title: "[전자금융] 디버깅 탐지기능 적용"
+      probes: [IOS-ANTIDEBUG, IOS-GET-TASK-ALLOW]
+    - item_id: MOB-SER-025
+      title: "앱 소스코드 내 운영정보 노출 방지"
+      probes: [CMN-SECRET, CMN-HARDCODED-KEY]
+    - item_id: MOB-SER-043
+      title: "백그라운드 화면 보호"
+      probes: [IOS-BG-SNAPSHOT]
+
+  aos:
+    - item_id: MOB-FIN-011
+      title: "[전자금융] OS 변조 탐지 기능 적용"
+      probes: [AND-ROOT-DETECT]
+    - item_id: MOB-FIN-012
+      title: "[전자금융] 악성코드 방지"
+      probes: [AND-MALWARE-DEFENSE]
+    - item_id: MOB-FIN-018
+      title: "[전자금융] 프로그램 무결성 검증"
+      probes: [AND-TAMPER, AND-SIGN-SCHEME, AND-DEBUG-CERT]
+    - item_id: MOB-FIN-021
+      title: "[전자금융] 디버깅 탐지기능 적용"
+      probes: [AND-DEBUGGABLE, AND-ANTIDEBUG]
+    - item_id: MOB-SER-025
+      title: "앱 소스코드 내 운영정보 노출 방지"
+      probes: [CMN-SECRET, CMN-HARDCODED-KEY]
+
+  rn:
+    - item_id: RN-001
+      title: "React Native bundle 보호"
+      probes: [RN-BUNDLE-EXISTS, RN-BUNDLE-PROTECTION]
+    - item_id: RN-002
+      title: "NHN AppGuard React Native 보호 작업 적용"
+      probes: [RN-APPGUARD]
